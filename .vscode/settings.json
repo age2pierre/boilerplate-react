@@ -5,6 +5,9 @@
     "typescript",
     "typescriptreact"
   ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "editor.formatOnSave": true,
   "files.autoSave": "off",
   "typescript.implementationsCodeLens.enabled": true,

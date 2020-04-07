@@ -1,0 +1,9 @@
+{
+  "extensions": {
+    "endpoints": {
+      "dev": {
+        "url": "http://swapi.apis.guru/"
+      }
+    }
+  }
+}

@@ -9,8 +9,12 @@
   "license": "ISC",
   "main": "src/index.tsx",
   "scripts": {
-    "build": "parcel build src/index.html",
+    "build": "npm run gql:all && parcel build src/index.html",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,scss,css,html}'",
+    "gql:all": "npm run gql:validate && npm run gql:report && npm run gql:typegen",
+    "gql:report": "npx ts-graphql-plugin report --verbose",
+    "gql:typegen": "rimraf src/**/__generated__ && npx ts-graphql-plugin typegen --verbose",
+    "gql:validate": "npx ts-graphql-plugin validate --verbose",
     "lint": "eslint -c .eslintrc.json --fix 'src/**/*.{ts,tsx}'",
     "start": "parcel serve src/index.html --open --no-autoinstall",
     "test": "jest",
@@ -39,9 +43,13 @@
     "not dead"
   ],
   "dependencies": {
+    "graphql": "14.5.8",
+    "graphql-tag": "2.10.3",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-router-dom": "5.1.2",
+    "src": "1.1.2",
+    "urql": "1.9.5",
     "utility-types": "3.10.0"
   },
   "devDependencies": {
@@ -56,6 +64,7 @@
     "eslint-config-prettier": "6.10.0",
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-react-hooks": "2.5.0",
+    "eslint-plugin-simple-import-sort": "5.0.2",
     "husky": "4.2.3",
     "jest": "25.1.0",
     "lint-staged": "10.0.8",
@@ -63,8 +72,10 @@
     "parcel-plugin-bundle-visualiser": "1.2.0",
     "postcss-modules": "1.5.0",
     "prettier": "1.19.1",
+    "rimraf": "3.0.2",
     "sass": "1.26.3",
     "sort-package-json": "1.40.0",
+    "ts-graphql-plugin": "1.11.0",
     "ts-jest": "25.2.1",
     "typescript": "3.8.3",
     "typescript-plugin-css-modules": "2.2.0"
