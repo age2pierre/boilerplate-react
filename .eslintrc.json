@@ -15,7 +15,12 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint"],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "simple-import-sort",
+    "@typescript-eslint"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -29,6 +34,9 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "simple-import-sort/sort": "error",
+    "sort-imports": "off",
+    "import/order": "off",
     "react/self-closing-comp": [
       "error",
       {

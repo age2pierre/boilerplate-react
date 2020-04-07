@@ -17,10 +17,12 @@ A simple opinionated boilerplate of how I like to setup my static react projects
 1. Run `npm start` to run dev server
 1. Hack away
 
-If you use VSCode it is a good idea to install
-[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode),
-[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-and [VSCode React Refactor](https://marketplace.visualstudio.com/items?itemName=planbcoding.vscode-react-refactor) extensions.
+If you use VSCode we recommend to install the following extensions :
+
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [VSCode React Refactor](https://marketplace.visualstudio.com/items?itemName=planbcoding.vscode-react-refactor)
+- [GraphQL](https://marketplace.visualstudio.com/items?itemName=Prisma.vscode-graphql)
 
 ## Contribution
 

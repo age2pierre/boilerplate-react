@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "declaration": true,
     "experimentalDecorators": true,
     "jsx": "react",
@@ -13,7 +13,6 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "paths": { "~*": ["./src/*"] },
     "plugins": [
       {
         "name": "typescript-plugin-css-modules",
@@ -22,6 +21,15 @@
             "useConfig": true
           }
         }
+      },
+      {
+        "name": "ts-graphql-plugin",
+        "schema": {
+          "http": {
+            "url": "http://swapi.apis.guru/"
+          }
+        },
+        "tag": "gql"
       }
     ],
     "sourceMap": true,

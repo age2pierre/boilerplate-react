@@ -1,0 +1,21 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
+// Font Variables
+$main-font: 'Public Sans', sans-serif;
+
+// Styles
+body {
+  font-family: $main-font;
+  font-weight: 420;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $main-font;
+  font-weight: 650;
+}
