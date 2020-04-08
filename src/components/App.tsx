@@ -1,15 +1,26 @@
+import { devtoolsExchange } from '@urql/devtools'
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { createClient, Provider } from 'urql'
+import {
+  cacheExchange,
+  createClient,
+  dedupExchange,
+  fetchExchange,
+  Provider,
+} from 'urql'
 
 import { Loading } from './Loading'
 
 const gqlClient = createClient({
   url: 'http://swapi.apis.guru/',
+  exchanges:
+    process.env.NODE_ENV === 'development'
+      ? [dedupExchange, devtoolsExchange, cacheExchange, fetchExchange]
+      : [],
 })
 
-export const LandingPage = React.lazy(() => import('./Main'))
-export const DemoGql = React.lazy(() => import('./DemoGql'))
+const LandingPage = React.lazy(() => import('./Main'))
+const DemoGql = React.lazy(() => import('./DemoGql'))
 
 export const App = () => (
   <Provider value={gqlClient}>

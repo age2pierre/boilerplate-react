@@ -27,7 +27,7 @@ export const DemoPage = () => {
   })
 
   const paragraph: string = fetching
-    ? 'Please wiat while loading...'
+    ? 'Please wait...'
     : error
     ? `errors => ${error.message}`
     : `Found ${data?.allFilms?.totalCount ?? 0} movies`
