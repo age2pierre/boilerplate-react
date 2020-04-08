@@ -9,7 +9,7 @@
   "license": "ISC",
   "main": "src/index.tsx",
   "scripts": {
-    "build": "parcel build --experimental-scope-hoisting src/index.html",
+    "build": "npm run typecheck && parcel build --experimental-scope-hoisting src/index.html",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,scss,css,html,md}'",
     "gql:all": "npm run gql:validate && npm run gql:report && npm run gql:typegen",
     "gql:report": "npx ts-graphql-plugin report --verbose",
@@ -18,6 +18,7 @@
     "lint": "eslint -c .eslintrc.json --fix 'src/**/*.{ts,tsx}'",
     "start": "parcel serve src/index.html --open --no-autoinstall",
     "test": "jest",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
     "upgrade-interactive": "npx npm-check --update"
   },
   "husky": {
@@ -45,7 +46,6 @@
   "dependencies": {
     "@types/node": "13.11.0",
     "graphql": "14.5.8",
-    "graphql-tag": "2.10.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-router-dom": "5.1.2",
@@ -70,6 +70,7 @@
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-react-hooks": "3.0.0",
     "eslint-plugin-simple-import-sort": "5.0.2",
+    "graphql-tag": "2.10.3",
     "husky": "4.2.3",
     "jest": "25.2.7",
     "lint-staged": "10.1.2",
