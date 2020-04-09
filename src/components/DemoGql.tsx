@@ -1,11 +1,26 @@
 import gql from 'graphql-tag'
 import React from 'react'
 import { useQuery } from 'urql'
+import type { ValuesType } from 'utility-types'
 
-import {
+import type {
   DemoGetFilms,
   DemoGetFilmsVariables,
 } from './__generated__/demo-get-films'
+
+export type Film = ValuesType<
+  NonNullable<NonNullable<DemoGetFilms['allFilms']>['films']>
+>
+
+export const FilmList = (props: { films: Film[] }) => {
+  return (
+    <ul>
+      {props.films.map(film => (
+        <li key={film?.id}>{film?.title ?? 'N/A'}</li>
+      ))}
+    </ul>
+  )
+}
 
 export const DemoPage = () => {
   const [{ fetching, data, error }] = useQuery<
@@ -36,11 +51,7 @@ export const DemoPage = () => {
     <>
       <h1>SWAPI Example</h1>
       <p>{paragraph}</p>
-      <ul>
-        {(data?.allFilms?.films ?? []).map(datum => (
-          <li key={datum?.id}>{datum?.title}</li>
-        ))}
-      </ul>
+      <FilmList films={data?.allFilms?.films ?? []} />
     </>
   )
 }
