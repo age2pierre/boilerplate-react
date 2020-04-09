@@ -17,7 +17,7 @@ query DemoGetFilms {
 }
 ```
 
-From [src/components/DemoGql.tsx:15:16](src/components/DemoGql.tsx#L15-L26)
+From [src/components/DemoGql.tsx:30:16](../src/components/DemoGql.tsx#L30-L41)
 
 ---
 
