@@ -26,15 +26,6 @@
             "useConfig": true
           }
         }
-      },
-      {
-        "name": "ts-graphql-plugin",
-        "schema": {
-          "http": {
-            "url": "http://swapi.apis.guru/"
-          }
-        },
-        "tag": "gql"
       }
     ],
     "sourceMap": true,

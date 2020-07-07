@@ -22,7 +22,6 @@ If you use VSCode we recommend to install the following extensions :
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [VSCode React Refactor](https://marketplace.visualstudio.com/items?itemName=planbcoding.vscode-react-refactor)
-- [GraphQL](https://marketplace.visualstudio.com/items?itemName=Prisma.vscode-graphql)
 
 ## Contribution
 
