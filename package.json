@@ -9,7 +9,7 @@
   "license": "ISC",
   "main": "src/index.tsx",
   "scripts": {
-    "build": "npm run typecheck && parcel build --experimental-scope-hoisting src/index.html",
+    "build": "npm run type-check && parcel build --experimental-scope-hoisting src/index.html",
     "format": "prettier --write 'src/' 'docs/'",
     "gql": "concurrently 'npm:gql-*'",
     "gql-report": "ts-graphql-plugin report --verbose -o docs/GRAPHQL_OPERATIONS.md",
@@ -19,11 +19,13 @@
     "lint-css": "stylelint --fix './src/**/*.{ts,tsx}'",
     "lint-js": "eslint -c .eslintrc.json --fix 'src/**/*.{ts,tsx}'",
     "pre-push": "concurrently 'npm:lint-*' 'npm:gql-*' && npm run format && concurrently 'npm:type-*' 'npm:test'",
-    "start": "parcel serve src/index.html --open --no-autoinstall",
+    "start": "concurrently 'npm:watch-*'",
     "test": "jest",
     "type-check": "tsc --project tsconfig.json --noEmit",
     "type-coverage": "type-coverage --detail -p ./tsconfig.json --strict --ignore-catch --at-least 99",
-    "upgrade-interactive": "npm-check --update"
+    "upgrade-interactive": "npm-check --update",
+    "watch-build": "parcel serve src/index.html --open --no-autoinstall",
+    "watch-type-check": "tsc --project tsconfig.json --noEmit --watch"
   },
   "husky": {
     "hooks": {
