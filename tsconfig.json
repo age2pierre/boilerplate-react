@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "src",
     "declaration": true,
     "experimentalDecorators": true,
     "jsx": "react",
@@ -15,24 +14,14 @@
     "importsNotUsedAsValues": "error",
     "useDefineForClassFields": true,
     "noImplicitReturns": true,
+    "skipLibCheck": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "esModuleInterop": true,
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules",
-        "options": {
-          "postCssOptions": {
-            "useConfig": true
-          }
-        }
-      }
-    ],
     "sourceMap": true,
     "strict": true,
     "types": ["node", "jest"],
-    "target": "es2019"
+    "target": "esnext"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*"]
 }

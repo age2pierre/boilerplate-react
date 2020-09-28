@@ -12,7 +12,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2020,
     "sourceType": "module"
   },
   "plugins": [
@@ -44,9 +44,22 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "simple-import-sort/sort": "error",
+    "simple-import-sort/imports": "error",
     "sort-imports": "off",
     "import/order": "off",
+    "react/jsx-no-useless-fragment": "error",
+    "react/jsx-boolean-value": ["error", "always"],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      { "props": "never", "children": "never" }
+    ],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "function-declaration",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
     "react/self-closing-comp": [
       "error",
       {
